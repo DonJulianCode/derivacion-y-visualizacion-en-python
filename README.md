@@ -17,48 +17,59 @@ Ilustrar, de forma didáctica y visual, cómo se puede resolver un problema clá
 
 Todo esto aplicado sobre una función cuadrática convexa simple:
 
-```math
+$$
 f(x) = (x - 3)^2
-📁 Estructura del proyecto
-Archivo/Sección	Descripción
-notebook.ipynb	Notebook con implementación completa en Google Colab o Jupyter.
-README.md	Este archivo. Explica propósito, estructura y decisiones.
-funcion.py (opcional)	Código modularizado para usar fuera del notebook.
+$$
 
-🧮 Pasos principales del análisis
-Definición simbólica de la función y su derivada con SymPy.
+---
 
-Visualización de expresiones usando LaTeX y IPython.display.
+## 📁 Estructura del proyecto
 
-Resolución simbólica del mínimo mediante derivación.
+| Archivo/Sección | Descripción |
+|-----------------|-------------|
+| `notebook.ipynb` | Notebook con implementación completa en Google Colab o Jupyter. |
+| `README.md` | Este archivo. Explica propósito, estructura y decisiones. |
+| `funcion.py` (opcional) | Código modularizado para usar fuera del notebook. |
 
-Conversión a función numérica usando lambdify.
+---
 
-Optimización numérica con scipy.optimize.minimize.
+## 🧮 Pasos principales del análisis
 
-Gráfico combinado de la función y su derivada.
+1. **Definición simbólica** de la función y su derivada con `SymPy`.
+2. **Visualización** de expresiones usando LaTeX y `IPython.display`.
+3. **Resolución simbólica** del mínimo mediante derivación.
+4. **Conversión a función numérica** usando `lambdify`.
+5. **Optimización numérica** con `scipy.optimize.minimize`.
+6. **Gráfico combinado** de la función y su derivada.
+7. **Comparación de resultados** entre métodos.
 
-Comparación de resultados entre métodos.
+---
 
-📊 Resultados esperados
-🧠 Simbólico:
-ini
+## 📊 Resultados esperados
+
+### 🧠 Simbólico:
+x = 3.0, f(x) = 0.0
+
+shell
 Copiar
 Editar
-x = 3.0,    f(x) = 0.0
-⚙️ Numérico (SciPy):
-scss
+
+### ⚙️ Numérico (SciPy):
+x ≈ 2.9999999840660854, f(x) ≈ 0.000000
+
+yaml
 Copiar
 Editar
-x ≈ 2.9999999840660854,    f(x) ≈ 0.000000
+
 Ambos métodos convergen al mismo mínimo, validando la precisión y consistencia del análisis.
 
-🔍 Verificación
+---
+
+## 🔍 Verificación
+
 La diferencia absoluta entre ambos métodos es menor a $10^{-7}$:
 
-python
-Copiar
-Editar
+```python
 np.isclose(3.0, 2.9999999840660854, atol=1e-6)  # True
 Esto confirma la fiabilidad del método numérico incluso sin conocer la derivada exacta.
 
